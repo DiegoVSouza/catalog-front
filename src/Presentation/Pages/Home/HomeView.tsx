@@ -2,16 +2,8 @@ import { useEffect } from "react";
 import './HomeView.css'
 import { TbBrandGithubFilled } from "react-icons/tb";
 import AboutMe from "../../Components/AboutMe/AboutMe";
+import Projects from "../../Components/Projects/Repositories";
 export default function HomeView() {
-  // const {
-  //   getTodos,
-  //   createTodo,
-  //   onChangeValue,
-  //   toggleRead,
-  //   removeTodo,
-  //   value,
-  //   todos,
-  // } = useViewModel();
 
   return (
 
@@ -23,7 +15,7 @@ export default function HomeView() {
         <h3>Feel free to look around</h3>
       </section>
       <AboutMe/>
-      
+      <Projects/>
       <article>
         <header>
           <h2>About Me</h2>
