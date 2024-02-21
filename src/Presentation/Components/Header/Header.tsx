@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useViewModel from "../../Todo/TodoList/HomeViewModel";
 import './Header.css'
-export default function HomeView() {
+export default function Header() {
     return (
         <nav>
             <ul>
