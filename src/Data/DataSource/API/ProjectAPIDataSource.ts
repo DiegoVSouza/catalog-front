@@ -5,11 +5,9 @@ import localDB from "./LocalDB";
 import { initialData } from './InitialData'
 
 export default class ProjectAPIDataSourceImpl implements ProjectDataSource {
-  db = localDB<ProjectAPIEntity>("todos", initialData);
-
+  db = localDB<ProjectAPIEntity>("projects", initialData);
   async getProjects(): Promise<Project[]> {
     const data = this.db?.getAll();
-
     return data?.map((item) => ({
       id: item.id,
       title: item.title,

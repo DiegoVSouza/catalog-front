@@ -6,12 +6,12 @@ export interface GetProjectsUseCase {
 }
 
 export class GetProjects implements GetProjectsUseCase {
-  private todoRepo: ProjectRepository;
-  constructor(_todoRepo: ProjectRepository) {
-    this.todoRepo = _todoRepo;
+  private projectRepo: ProjectRepository;
+  constructor(_projectRepo: ProjectRepository) {
+    this.projectRepo = _projectRepo;
   }
 
   async invoke() {
-    return this.todoRepo.getProjects();
+    return this.projectRepo.getProjects();
   }
 }

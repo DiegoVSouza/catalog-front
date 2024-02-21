@@ -4,10 +4,13 @@ function db<T>(table: string, initialData: T[] = []) {
     const getTable = () => window.localStorage.getItem(table);
 
     if (!getTable()) {
-        setTable(JSON.stringify(initialData));
+      setTable(JSON.stringify(initialData));
     }
 
-    const allLocal = () => JSON.parse(getTable()!);
+    const allLocal = () => {
+      const tableData = getTable();
+      return tableData ? JSON.parse(tableData) : [];
+    };
 
     return {
       getAll() {
@@ -77,7 +80,7 @@ function db<T>(table: string, initialData: T[] = []) {
     removeById(columnId: string) {
       return false;
     },
-    create<T>(params: T) {},
+    create<T>(params: T) { },
     // update(id: string, newModel: Todo): Promise<Todo>
     updateByField(columnId: string, field: any, newValue: any) {
       return {} as T;
