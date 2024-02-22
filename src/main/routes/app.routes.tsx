@@ -6,7 +6,7 @@ import Header from '../../Presentation/Components/Header/Header';
 const Router: React.FC = ()=> {
   return (
     <Routes>
-      <Route path='/' element={<HomeView/>}/>
+      <Route path='/portifolio_pratica_uol' element={<HomeView/>}/>
     </Routes>
   );
 }
