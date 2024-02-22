@@ -1,0 +1,21 @@
+h1 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 9rem;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#wellcome-section {
+    color: white;
+    height: 100vh;
+    /* background: var(--purple-02); */
+    background: rgb(127, 3, 127);
+    background: linear-gradient(0deg, rgba(127, 3, 127, 1) 0%, rgba(43, 0, 39, 1) 100%);
+}
