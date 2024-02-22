@@ -1,0 +1,17 @@
+#aboutme{
+    background: var(--purple-02);
+    padding: 2rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+#aboutme dd{
+    border-bottom: 2px solid var(--orange-01);
+}
+
+#aboutme dt{
+    padding: 1.5rem;
+    font-weight: 700;
+
+}
+
