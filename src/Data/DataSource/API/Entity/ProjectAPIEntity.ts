@@ -5,4 +5,5 @@ export interface ProjectAPIEntity {
   is_completed: boolean;
   description: string;
   stacks: string[];
+  image: string;
 }

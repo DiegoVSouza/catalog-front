@@ -5,4 +5,5 @@ export interface Project {
   isComplete: boolean;
   description: string;
   stacks: string[];
+  image: string;
 }
