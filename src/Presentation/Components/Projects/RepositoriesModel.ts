@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 export default function RepositoriesModel() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [value, setValue] = useState("");
+  const [project, setProject] = useState<Project>();
 
   const projectsDataSourceImpl = new ProjectAPIDataSourceImpl();
   const projectsRepositoryImpl = new ProjectRepositoryImpl(projectsDataSourceImpl);
@@ -18,14 +18,15 @@ export default function RepositoriesModel() {
     setProjects(await getProjectsUseCase.invoke());
   }
 
-  function onChangeValue(e: React.ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
-    setValue(e.target.value);
+  function onChangeValue(id: String) {
+    let project = projects.find(item=> item.id === id)
+    setProject(project);
   }
 
   return {
     getProjects,
     onChangeValue,
     projects,
+    project
   };
 }
