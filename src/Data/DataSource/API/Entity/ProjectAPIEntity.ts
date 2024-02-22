@@ -6,4 +6,5 @@ export interface ProjectAPIEntity {
   description: string;
   stacks: string[];
   image: string;
+  deploy_link: string;
 }

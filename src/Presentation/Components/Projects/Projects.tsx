@@ -18,9 +18,8 @@ export default function Projects() {
 
     console.log(project)
 
-    const SeeProject = (link: string) => {
+    const GoToLink = (link: string) => {
         window.location.href = link
-
     }
 
 
@@ -59,7 +58,10 @@ export default function Projects() {
                             ))}
                         </ul>
                         <img src={project.image} alt='Project Image' />
-                        <button onClick={() => SeeProject(project.link)} >Ver projeto</button>
+                        <div>
+                        <button onClick={() => GoToLink(project.link)} >Ver codigo</button>
+                        <button onClick={() => GoToLink(project.deployLink)} >Ver projeto</button>
+                        </div>
                     </footer>
                 )}
             </div>

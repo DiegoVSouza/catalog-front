@@ -6,4 +6,5 @@ export interface Project {
   description: string;
   stacks: string[];
   image: string;
+  deployLink: string;
 }

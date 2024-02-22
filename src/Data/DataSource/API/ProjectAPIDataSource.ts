@@ -15,7 +15,8 @@ export default class ProjectAPIDataSourceImpl implements ProjectDataSource {
       isComplete: item.is_completed,
       description: item.description,
       stacks: item.stacks,
-      image: item.image
+      image: item.image,
+      deployLink: item.deploy_link
     }));
   }
 

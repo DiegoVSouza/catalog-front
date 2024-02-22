@@ -6,6 +6,7 @@ export const initialData = [
       is_completed: false,
       description: 'Project for pratice',
       stacks: ['HTML', 'CSS', 'Javascript'],
-      image: "https://github.com/DiegoVSouza/one_piece_pratica_uol/assets/104873917/1d85d927-2e82-4903-ac10-259c3dfd625e"
+      image: "https://github.com/DiegoVSouza/one_piece_pratica_uol/assets/104873917/1d85d927-2e82-4903-ac10-259c3dfd625e",
+      deploy_link: "https://diegovsouza.github.io/one_piece_pratica_uol/"
     },
   ]
