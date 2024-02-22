@@ -7,7 +7,7 @@ import { SiGmail } from "react-icons/si";
 export default function AboutMe() {
 
   return (
-      <section>
+      <section id="aboutme">
         <h2>About Me</h2>
         <h3>Diego Vieira de Souza</h3>
         <p>

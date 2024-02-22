@@ -6,9 +6,7 @@ export default function Header() {
         <nav>
             <ul>
                 <li><a href="#aboutme">About me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Repositories</a></li>
-                <li><a href="#mailingaddress">Contact me</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     );
