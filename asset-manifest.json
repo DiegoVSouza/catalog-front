@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/portifolio_pratica_uol/static/css/main.fc7c14e9.css",
-    "main.js": "/portifolio_pratica_uol/static/js/main.c43db008.js",
+    "main.js": "/portifolio_pratica_uol/static/js/main.6c86562d.js",
     "static/media/backgroundimage.png": "/portifolio_pratica_uol/static/media/backgroundimage.4c82139a60da725a82e7.png",
     "index.html": "/portifolio_pratica_uol/index.html",
     "main.fc7c14e9.css.map": "/portifolio_pratica_uol/static/css/main.fc7c14e9.css.map",
-    "main.c43db008.js.map": "/portifolio_pratica_uol/static/js/main.c43db008.js.map"
+    "main.6c86562d.js.map": "/portifolio_pratica_uol/static/js/main.6c86562d.js.map"
   },
   "entrypoints": [
     "static/css/main.fc7c14e9.css",
-    "static/js/main.c43db008.js"
+    "static/js/main.6c86562d.js"
   ]
 }
