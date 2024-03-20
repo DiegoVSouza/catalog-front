@@ -1,5 +1,5 @@
 import { AdminPost, AdminPut } from "../../Domain/Model/Admin";
-import { AdminAPIEntity } from "./API/Entity/AdminAPIEntity";
+import { AdminAPIEntity } from "../Entity/AdminAPIEntity";
 
 export default interface AdminDataSource {
   getAdmins(): Promise<AdminAPIEntity[]>;

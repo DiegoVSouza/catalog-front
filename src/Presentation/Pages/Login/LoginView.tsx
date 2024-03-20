@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { Creators as Auth } from '../../../store/modules/authentication/actions'
 import { Button } from "@chakra-ui/react";
-import { api } from '../../../Services/api';
+import { api } from '../../../Data/Services/api';
 import { Admin, AdminStore } from '../../../Domain/Model/Admin';
 
 

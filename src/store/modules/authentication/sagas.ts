@@ -3,7 +3,7 @@ import { Creators as AuthActions } from "./actions";
 import { Creators as UserActions } from "./../user/actions";
 import { Creators as AdminActions } from "./../admin/actions";
 import axios from "axios";
-import { api } from "../../../Services/api";
+import { api } from "../../../Data/Services/api";
 
 interface LoginProps {
   email: string;

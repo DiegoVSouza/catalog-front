@@ -26,7 +26,6 @@ export interface Admin {
 }
 
 export interface AdminPost {
-  id: string,
   email: string,
   name: string,
   password: string,

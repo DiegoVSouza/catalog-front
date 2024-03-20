@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import './Admin.css';
-import useRepositoriesModel from './AmdminsModel';
+import useRepositoriesModel from './AdminsModel';
 
 export default function Admins() {
     const {

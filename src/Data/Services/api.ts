@@ -1,6 +1,6 @@
 import axios from "axios";
-import { store } from "../store";
-import { Creators as UserActions } from "../store/modules/user/actions";
+import { store } from "../../store";
+import { Creators as UserActions } from "../../store/modules/user/actions";
 
 const anotaaiApi = 'http://localhost:81';
 

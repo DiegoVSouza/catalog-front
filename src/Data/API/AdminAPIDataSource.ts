@@ -1,7 +1,7 @@
-import AdminDataSource from "../AdminDataSource";
-import { AdminAPIEntity } from "./Entity/AdminAPIEntity";
-import { api } from "../../../Services/api";
-import { AdminPost, AdminPut } from "../../../Domain/Model/Admin";
+import { AdminPost, AdminPut } from "../../Domain/Model/Admin";
+import { api } from "../Services/api";
+import AdminDataSource from "../DataSource/AdminDataSource";
+import { AdminAPIEntity } from "../Entity/AdminAPIEntity";
 
 export default class AdminAPIDataSourceImpl implements AdminDataSource {
   async getAdmins(): Promise<AdminAPIEntity[]> {
