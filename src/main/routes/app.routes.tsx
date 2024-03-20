@@ -1,12 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomeView from '../../Presentation/Pages/Home/HomeView';
-import Header from '../../Presentation/Components/Header/Header';
+import Login from '../../Presentation/Pages/Login/LoginView';
 
 const Router: React.FC = ()=> {
   return (
     <Routes>
-      <Route path='/portifolio_pratica_uol' element={<HomeView/>}/>
+      <Route path='/catalog-front/' element={<HomeView/>}/>
+      <Route path='/login/' element={<Login/>}/>
     </Routes>
   );
 }
