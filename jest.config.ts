@@ -5,7 +5,7 @@ const baseTestDir = '<rootDir>/src/Test';
 
 const config: Config.InitialOptions = {
     preset: 'ts-jest',
-    testEnvironment: 'node',
+    testEnvironment: 'jsdom',
     verbose: true,
     collectCoverage: true,
     collectCoverageFrom: [

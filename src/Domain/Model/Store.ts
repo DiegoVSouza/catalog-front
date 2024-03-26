@@ -24,7 +24,6 @@ export interface Store {
 }
 
 export interface StorePost {
-  id: string,
   email: string,
   name: string,
   neighborhood: string,

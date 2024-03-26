@@ -6,12 +6,12 @@ export interface DeleteAdminsUseCase {
 }
 
 export class DeleteAdmins implements DeleteAdminsUseCase {
-  private projectRepo: AdminRepository;
-  constructor(_projectRepo: AdminRepository) {
-    this.projectRepo = _projectRepo;
+  private categoryRepo: AdminRepository;
+  constructor(_categoryRepo: AdminRepository) {
+    this.categoryRepo = _categoryRepo;
   }
 
   async invoke(id:string) {
-    return this.projectRepo.deleteAdmins(id);
+    return this.categoryRepo.deleteAdmins(id);
   }
 }

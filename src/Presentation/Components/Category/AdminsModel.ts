@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Admin, AdminPost, AdminPut } from "../../../Domain/Model/Admin";
 import { AdminRepositoryImpl } from "../../../Data/Repository/AdminRepositoryImpl";
 import { GetAdmins } from "../../../Domain/UseCase/Admin/GetAdmins";
@@ -30,7 +30,7 @@ export default function AdminsModel() {
   }
   async function deleteAdmins(id:string) {
     setAdmin(await deleteAdminsUseCase.invoke(id));
-    getAdmins()
+    await getAdmins()
   }
 
   function onChangeValue(id: String) {

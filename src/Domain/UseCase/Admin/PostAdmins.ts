@@ -6,12 +6,12 @@ export interface PostAdminsUseCase {
 }
 
 export class PostAdmins implements PostAdminsUseCase {
-  private projectRepo: AdminRepository;
-  constructor(_projectRepo: AdminRepository) {
-    this.projectRepo = _projectRepo;
+  private adminRepo: AdminRepository;
+  constructor(_adminRepo: AdminRepository) {
+    this.adminRepo = _adminRepo;
   }
 
   async invoke(data:AdminPost) {
-    return this.projectRepo.postAdmins(data);
+    return this.adminRepo.postAdmins(data);
   }
 }

@@ -6,12 +6,12 @@ export interface PutAdminsUseCase {
 }
 
 export class PutAdmins implements PutAdminsUseCase {
-  private projectRepo: AdminRepository;
-  constructor(_projectRepo: AdminRepository) {
-    this.projectRepo = _projectRepo;
+  private adminRepo: AdminRepository;
+  constructor(_adminRepo: AdminRepository) {
+    this.adminRepo = _adminRepo;
   }
 
   async invoke(data:AdminPut) {
-    return this.projectRepo.putAdmins(data);
+    return this.adminRepo.putAdmins(data);
   }
 }
