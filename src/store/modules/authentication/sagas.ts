@@ -54,7 +54,6 @@ async function getUser(login: LoginProps, token:string) {
     "Access-Control-Allow-Origin": "*",
     authorization: `Bearer: ${token}`,
   }
-  console.log(login)
   const { data } = await api.get("/api/v1/admin", {headers});
   let user = data.find((item: LoginProps) => item.email === login.email)
   return user;

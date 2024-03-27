@@ -9,6 +9,7 @@ import { IconContext } from "react-icons";
 import { ChakraProvider } from '@chakra-ui/react'
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { theme } from './main/themes/ChakraUITheme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,7 +20,7 @@ root.render(
     <ToastContainer />
     <IconContext.Provider value={{ className: 'react-icons' }}>
     <Provider store={store}>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <BrowserRouter>
         <Routers />
       </BrowserRouter>

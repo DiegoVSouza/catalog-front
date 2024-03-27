@@ -1,11 +1,13 @@
 :root {
-  --purple-01: #7f037f;
-  --purple-02: #6a0269;
-  --purple-03: #550153;
-  --purple-04: #40013d;
-  --purple-05: #2b0027;
-  --orange-01: #ff6550;
-  --gray-01: #1f1f1f;
+  --red-01: #D7232F;
+  --red-02: #ad1f28;
+  --red-03: #E03A1B;
+  --orange-01: #F7A406;
+  --orange-02: #E05C1B;
+  --orange-03: #ff6550;
+  --gray-01: #f0f0f5;
+  --gray-02: #e4e4eb;
+  --black-01: #2E2E2E;
 }
 
 html{
@@ -21,4 +23,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.primary{
+  color: white !important;
+  background: var(--red-01) !important;
+}
+
+.secundary{
+  color: white !important;
+  background: var(--orange-01) !important;
 }

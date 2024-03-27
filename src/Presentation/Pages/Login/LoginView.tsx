@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { Creators as Auth } from '../../../store/modules/authentication/actions'
-import { Button } from "@chakra-ui/react";
+import { Box, Button, Text, useColorMode } from "@chakra-ui/react";
 import { api } from '../../../Data/Services/api';
 import { Admin, AdminStore } from '../../../Domain/Model/Admin';
 
@@ -32,10 +32,14 @@ export default function Login() {
             console.log(error)
         })
     }
+
     return (
-        <>
-            <Button onClick={handleCreate}>criar</Button>
+        <main>
+            <Text fontSize='8xl' > 123</Text>
             <Button onClick={handleSubmit}>Logar</Button>
-        </>
+            <Box>
+                123 djaskdjkasdj
+            </Box>
+        </main>
     )
 }
