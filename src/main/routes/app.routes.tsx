@@ -6,7 +6,7 @@ import Login from '../../Presentation/Pages/Login/LoginView';
 const Router: React.FC = ()=> {
   return (
     <Routes>
-      <Route path='/catalog-front/' element={<HomeView/>}/>
+      <Route path='/home/' element={<HomeView/>}/>
       <Route path='/login/' element={<Login/>}/>
     </Routes>
   );

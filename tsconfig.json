@@ -22,6 +22,8 @@
     "experimentalDecorators": true,
   },
   "include": [
-    "src"
-, "src/main/hooks/.ts"  ]
+    "src",
+    "img.d.ts",
+    "src/main/hooks/.ts"
+  ]
 }

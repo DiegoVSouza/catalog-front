@@ -1,20 +1,36 @@
 import { useEffect } from "react";
 import './Header.css'
-import { Button, Flex, IconButton, Image, ListItem, Text, UnorderedList, useColorMode } from "@chakra-ui/react";
-import { MdDarkMode, MdWbSunny } from "react-icons/md";
+import { Button, Flex, IconButton, Image, ListItem, Text, UnorderedList, useColorMode, useMediaQuery } from "@chakra-ui/react";
+import { CiCirclePlus } from "react-icons/ci";
+import logo from '../../assets/images/logo.png'
+import Sidebar from "../SideBar/SideBar";
+import { useNavigate } from "react-router-dom";
 export default function Header() {
-    const { colorMode, toggleColorMode } = useColorMode()
-
+    const [isMobile] = useMediaQuery("(min-width: 768px)");
+    const history = useNavigate()
     return (
         <nav>
             <UnorderedList padding='1rem'>
-                <ListItem><img src='/images/logo.png' /></ListItem>
-                <Flex gap='1rem'>
-                    <ListItem><Text color='white' as='a' href="#aboutme">Home</Text></ListItem>
-                </Flex>
-                <ListItem><IconButton onClick={toggleColorMode} background='red'
-                    _hover={{ "background": 'red.300' }} color='white'
-                    aria-label='Trocar modo de cor' icon={colorMode === 'light' ? <MdDarkMode /> : <MdWbSunny />} ></IconButton></ListItem>
+                {
+                    isMobile ?
+                        <>
+                            <ListItem cursor='pointer' onClick={()=>history('/home')}><Image src={logo} w='4rem' /></ListItem>
+                            <Flex gap='1rem'>
+                                <ListItem><Button variant='link' onClick={() => history('/login/')}>To do</Button></ListItem>
+                                <ListItem><Button variant='link' onClick={() => history('/home/')}>Pratos</Button></ListItem>
+                            </Flex>
+
+                            <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Prato</Button></ListItem>
+                        </>
+                        :
+
+                        <>
+                            <Sidebar />
+                            <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Prato</Button></ListItem>
+                        </>
+
+                }
+
             </UnorderedList>
         </nav>
     );

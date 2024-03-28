@@ -49,7 +49,7 @@ h3 {
     bottom: 0;
     left: 0;
     z-index: -1;
-    background-image: url('../../../../public/images/backgroundimage.png');
+    /* background-image: url('../../../../public/images/backgroundimage.png'); */
     background-size: cover;
     background-position: center;
     opacity: 0.1;
