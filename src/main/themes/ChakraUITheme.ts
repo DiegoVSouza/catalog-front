@@ -21,7 +21,7 @@ export const theme = extendTheme({
         fontSize: "1rem",
         margin: "0",
         transition: "background-color 0.25s",
-        backgroundColor: props.colorMode === "light" ? "background.light" : "background.dark",
+        // backgroundColor: props.colorMode === "light" ? "background.light" : "background.dark",
         color: props.colorMode === "light" ? "gray.800" : "gray.100",
       },
       button:{

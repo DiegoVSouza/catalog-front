@@ -1,0 +1,14 @@
+.loginForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.FormContainer{
+    background: var(--red-02);
+    height: calc(100vh - 10rem);
+    border-radius: 0.5rem;
+}
+
+.FormContainer > image{
+}

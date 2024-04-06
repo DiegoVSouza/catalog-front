@@ -10,7 +10,7 @@ export default function HomeView() {
   return (
 
     <main>
-      <Box height='100vh'>
+      <Box >
         123
       </Box>
     </main>

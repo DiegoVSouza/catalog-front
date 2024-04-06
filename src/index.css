@@ -20,6 +20,23 @@ body {
   scroll-behavior: smooth;
 }
 
+main{
+  padding: 1rem 2rem;
+  min-height: calc(100vh - 7rem)
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 0.5rem 1rem; 
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  main {
+    padding: 0.75rem 1.5rem; 
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

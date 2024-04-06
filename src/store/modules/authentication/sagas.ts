@@ -29,45 +29,68 @@ const INITIAL_STATE = {
 };
 
 async function apiLogin(login: LoginProps) {
-  const { data } = await api.post("/api/v1/auth/admin",
+  await api.post("/api/v1/auth/admin",
     !login.email && !login.password
       ? INITIAL_STATE
       : {
         email: login.email,
         password: login.password,
       }
-  );
+  ).then(({ data }) => {
+    console.log(data)
 
-  console.log(data)
+    localStorage.setItem("@token", data.accessToken);
 
-  localStorage.setItem("@token", data.accessToken);
+    api.defaults.headers.common["x-access-token"] = data.accessToken;
+    api.defaults.headers.common["authorization"] = `Bearer: ${data.accessToken}`;
 
-  api.defaults.headers.common["x-access-token"] = data.accessToken;
-  api.defaults.headers.common["authorization"] = `Bearer: ${data.accessToken}`;
+    return data.accessToken;
+  }).catch((error) => {
+    console.log(error)
+  })
 
-  return data.accessToken;
+  await api.post("/api/v1/auth/store",
+    !login.email && !login.password
+      ? INITIAL_STATE
+      : {
+        email: login.email,
+        password: login.password,
+      }
+  ).then(({ data }) => {
+    console.log(data)
+
+    localStorage.setItem("@token", data.accessToken);
+
+    api.defaults.headers.common["x-access-token"] = data.accessToken;
+    api.defaults.headers.common["authorization"] = `Bearer: ${data.accessToken}`;
+
+    return data.accessToken;
+  }).catch((error) => {
+    console.log(error)
+  })
+
 }
 
-async function getUser(login: LoginProps, token:string) {
-  const headers =  {
+async function getUser(login: LoginProps, token: string) {
+  const headers = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     authorization: `Bearer: ${token}`,
   }
-  const { data } = await api.get("/api/v1/admin", {headers});
+  const { data } = await api.get("/api/v1/admin", { headers });
   let user = data.find((item: LoginProps) => item.email === login.email)
   return user;
 }
 
 function* loginRequest(login: any) {
   try {
-    const token:string = yield call(apiLogin, login);
+    const token: string = yield call(apiLogin, login);
     const user: LoginResponseProps = yield call(getUser, login, token);
     console.log("loginRequest", user);
     yield put(AuthActions.loginSuccess(user));
     if (user.role.value === "ADMIN") {
       yield put(AdminActions.setAdmin(user));
-    }else{
+    } else {
       yield put(UserActions.setUser(user));
     }
 
