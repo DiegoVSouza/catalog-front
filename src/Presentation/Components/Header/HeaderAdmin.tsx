@@ -8,7 +8,7 @@ import { IsMobile } from "../../../utils/IsMobile";
 import ToggleColorButton from '../ToggleColorButton/ToggleColorButton';
 import { AtavatarMenu } from '../Avatar/AvatarMenu';
 
-export default function HeaderStore() {
+export default function HeaderAdmin() {
     const history = useNavigate()
 
     const renderHeader = () => {
@@ -19,16 +19,16 @@ export default function HeaderStore() {
                     <AtavatarMenu/>
                 </Flex>
                 <Flex gap='1rem'>
-                    <ListItem><Button variant='link' onClick={() => history('/login/')}>To do</Button></ListItem>
-                    <ListItem><Button variant='link' onClick={() => history('/home/')}>Pratos</Button></ListItem>
+                    {/* <ListItem><Button variant='link' onClick={() => history('/login/')}>To do</Button></ListItem> */}
+                    <ListItem><Button variant='link' onClick={() => history('/stores/')}>Lojas</Button></ListItem>
                 </Flex>
 
-                <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Prato</Button></ListItem>
+                <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Loja</Button></ListItem>
             </>)
         else
             return (<>
                 <Sidebar />
-                <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Prato</Button></ListItem>
+                <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Loja</Button></ListItem>
             </>)
     }
     return (

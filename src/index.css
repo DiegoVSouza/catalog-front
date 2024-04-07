@@ -21,11 +21,11 @@ body {
 }
 
 main{
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   min-height: calc(100vh - 7rem)
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   main {
     padding: 0.5rem 1rem; 
   }
@@ -35,7 +35,7 @@ main{
   main {
     padding: 0.75rem 1.5rem; 
   }
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

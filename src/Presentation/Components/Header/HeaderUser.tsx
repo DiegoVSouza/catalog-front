@@ -1,17 +1,39 @@
-import { useEffect } from "react";
 import './Header.css'
-import { Button, Flex, IconButton, ListItem, Text, UnorderedList, useColorMode } from "@chakra-ui/react";
-import { MdDarkMode, MdWbSunny } from "react-icons/md";
-export default function Header() {
-    const {colorMode,toggleColorMode} = useColorMode()
+import { Button, Flex, ListItem, UnorderedList, Image } from "@chakra-ui/react";
+import { IsMobile } from "../../../utils/IsMobile";
+import ToggleColorButton from "../ToggleColorButton/ToggleColorButton";
+import { useNavigate } from "react-router-dom";
+import { CiCirclePlus } from "react-icons/ci";
+import logo from '../../assets/images/logo.png'
+import Sidebar from "../SideBar/SideBar";
 
+export default function HeaderUser() {
+    const history = useNavigate()
+
+    const renderHeader = () => {
+        if (IsMobile())
+            return (<>
+                <Flex>
+                    <ListItem cursor='pointer' onClick={() => history('/home')}><Image src={logo} w='4rem' /></ListItem>
+                    <ToggleColorButton />
+                </Flex>
+                <Flex gap='1rem'>
+                    <ListItem><Button variant='link' onClick={() => history('/home/')}>Pratos</Button></ListItem>
+                    <ListItem><Button variant='link' onClick={() => history('/home/')}>Pratos</Button></ListItem>
+                </Flex>
+
+                <ListItem><Button colorScheme='white' textAlign='center'>Login </Button></ListItem>
+            </>)
+        else
+            return (<>
+                <Sidebar />
+                <ListItem><Button textAlign='center'><CiCirclePlus />Adicionar Prato</Button></ListItem>
+            </>)
+    }
     return (
         <nav>
-            <UnorderedList>
-                <Flex gap='1rem'>
-                <ListItem><Text color='white' as='a' href="#aboutme">Home</Text></ListItem>
-                </Flex>
-                <ListItem><IconButton  onClick={toggleColorMode} background='red' _hover={{"background":'red.300'}} color='white'  aria-label='Trocar modo de cor' icon={colorMode === 'light' ? <MdDarkMode /> : <MdWbSunny/>} ></IconButton></ListItem>
+            <UnorderedList padding='1rem'>
+                {renderHeader()}
             </UnorderedList>
         </nav>
     );

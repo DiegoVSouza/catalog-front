@@ -15,8 +15,8 @@ export let api = axios.create({
   validateStatus: (status) => {
     if (status === 401) {
       store.dispatch(UserActions.logout());
-      if (window.location.pathname !== "/maissaude/m/login") {
-        window.location.pathname = "/maissaude/m/login";
+      if (window.location.pathname !== "/login") {
+        window.location.pathname = "/login";
       }
     }
     return status >= 200 && status < 300;
