@@ -2,7 +2,6 @@ import { all, takeLatest, call, put } from "redux-saga/effects";
 import { Creators as AuthActions } from "./actions";
 import { Creators as UserActions } from "./../user/actions";
 import { Creators as AdminActions } from "./../admin/actions";
-import axios from "axios";
 import { api } from "../../../Data/Services/api";
 
 interface LoginProps {
@@ -28,7 +27,14 @@ const INITIAL_STATE = {
   password: "",
 };
 
+const INITIAL_STATE_TOKEN = {
+  accessToken: "",
+  name: "",
+};
+
 async function apiLogin(login: LoginProps) {
+  let dataUser: LoginRequestProps = INITIAL_STATE_TOKEN;
+
   await api.post("/api/v1/auth/admin",
     !login.email && !login.password
       ? INITIAL_STATE
@@ -44,7 +50,7 @@ async function apiLogin(login: LoginProps) {
     api.defaults.headers.common["x-access-token"] = data.accessToken;
     api.defaults.headers.common["authorization"] = `Bearer: ${data.accessToken}`;
 
-    return data.accessToken;
+    dataUser = data
   }).catch((error) => {
     console.log(error)
   })
@@ -64,10 +70,12 @@ async function apiLogin(login: LoginProps) {
     api.defaults.headers.common["x-access-token"] = data.accessToken;
     api.defaults.headers.common["authorization"] = `Bearer: ${data.accessToken}`;
 
-    return data.accessToken;
+    dataUser = data
   }).catch((error) => {
     console.log(error)
   })
+  console.log(dataUser)
+  return dataUser.accessToken;
 
 }
 
@@ -77,17 +85,28 @@ async function getUser(login: LoginProps, token: string) {
     "Access-Control-Allow-Origin": "*",
     authorization: `Bearer: ${token}`,
   }
-  const { data } = await api.get("/api/v1/admin", { headers });
-  let user = data.find((item: LoginProps) => item.email === login.email)
+
+  let user;
+
+  const { data: dataAdmin } = await api.get("/api/v1/admin", { headers });
+  if (dataAdmin.length)
+    user = dataAdmin.find((item: LoginProps) => item.email === login.email)
+  const { data: datastore } = await api.get("/api/v1/store", { headers });
+  if (datastore.length)
+    user = datastore.find((item: LoginProps) => item.email === login.email)
+
   return user;
 }
 
 function* loginRequest(login: any) {
   try {
     const token: string = yield call(apiLogin, login);
+    if (token === '') {
+      throw new Error
+    }
     const user: LoginResponseProps = yield call(getUser, login, token);
     console.log("loginRequest", user);
-    yield put(AuthActions.loginSuccess(user));
+    yield put(AuthActions.loginSuccess(user, login.history));
     if (user.role.value === "ADMIN") {
       yield put(AdminActions.setAdmin(user));
     } else {
@@ -95,7 +114,7 @@ function* loginRequest(login: any) {
     }
 
   } catch (e) {
-    yield put(AuthActions.loginFailure(e));
+    yield put(AuthActions.loginFailure(e,login.verifyError));
   }
 }
 

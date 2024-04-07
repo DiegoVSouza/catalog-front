@@ -10,6 +10,7 @@ interface ErrorProps {
       };
     };
   };
+  verifyError: ()=>{}
 }
 
 interface LoginRequestProps {
@@ -18,7 +19,7 @@ interface LoginRequestProps {
     password: string;
     isAuthenticated: boolean;
   };
- 
+  history: (url: string) =>{};
 }
 
 const INITIAL_STATE = {
@@ -34,8 +35,8 @@ const onLoginFailure = (state: any, action: ErrorProps) => {
   console.log(state, action);
   return { error: action };
 };
-
 const onLoginSuccess = (state: any, action: LoginRequestProps) => {
+  action.history('/home')
   return action.data;
 };
 

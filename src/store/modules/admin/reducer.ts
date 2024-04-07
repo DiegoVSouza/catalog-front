@@ -41,7 +41,7 @@ const loadAdmin = (state = INITIAL_STATE, action: AdminProps) => {
     return admin
 }
 
-const onLogoutAdmin = () => {
+const onLogout= () => {
     localStorage.removeItem('@catolog:admin')
 
     return null
@@ -51,7 +51,7 @@ const onLogoutAdmin = () => {
 const HANDLERS = {
     [Types.SET_ADMIN]: setAdmin,
     [Types.LOAD_ADMIN]: loadAdmin,
-    [Types.LOGOUT_ADMIN]: onLogoutAdmin,
+    [Types.LOGOUT]: onLogout,
 }
 
 export default createReducer(INITIAL_STATE, HANDLERS)

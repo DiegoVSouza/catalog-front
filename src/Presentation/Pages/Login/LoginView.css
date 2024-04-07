@@ -1,14 +1,29 @@
-.loginForm{
+.loginForm {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.FormContainer{
+.FormContainer {
     background: var(--red-02);
     height: calc(100vh - 10rem);
     border-radius: 0.5rem;
 }
 
-.FormContainer > image{
+.FormContainer>image {}
+
+.loginMain {
+    padding: 1rem 2rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .loginMain {
+      padding: 0.5rem 1rem; 
+    }
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .loginMain {
+      padding: 0.75rem 1.5rem; 
+    }
+  }

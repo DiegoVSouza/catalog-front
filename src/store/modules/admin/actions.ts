@@ -2,6 +2,6 @@ import { createActions } from 'reduxsauce'
 
 export const { Types, Creators } = createActions({
     setAdmin: ['admin'],
-    logoutAdmin: [],
+    logout: [],
     loadAdmin: [],
 }, { prefix: '@admin/' })
