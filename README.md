@@ -21,7 +21,7 @@
   Utilizamos o back-end produzido em colaboração com meu colega Marcio Fernande
  </p>
  
- <p>link para o back: <a href="https://github.com/farciomernandes/catalog-api">https://github.com/farciomernandes/catalog-api</a>a></p>
+ <p>link para o back: <a href="https://github.com/farciomernandes/catalog-api">https://github.com/farciomernandes/catalog-api</a></p>
 
 ## 🚀 Tecnologias utilizadas
 - [Typescript](https://www.typescriptlang.org/)
