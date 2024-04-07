@@ -21,7 +21,7 @@ const Sidebar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode()
     const history = useNavigate()
-    const goTo = (url: string)=>{
+    const goTo = (url: string) => {
         history(url)
         onClose()
     }
@@ -48,7 +48,7 @@ const Sidebar = () => {
                             </Button>
                         </Flex>
 
-                        <ToggleColorButton/>
+                        <ToggleColorButton />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

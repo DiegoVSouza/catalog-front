@@ -7,6 +7,7 @@ import './InputComponent.css'
 interface InputComponentProps extends InputHTMLAttributes<HTMLInputElement> {
     labelName: string;
     inputName: string;
+    width?: string;
     register: UseFormRegister<any>;
     errors: FieldErrors;
 }
@@ -14,6 +15,7 @@ interface InputComponentProps extends InputHTMLAttributes<HTMLInputElement> {
 export default function InputComponent({
     labelName,
     inputName,
+    width,
     register,
     errors,
     ...props
@@ -24,7 +26,7 @@ export default function InputComponent({
     return (
         <Box
             as="section"
-            w='100%'
+            width={width ? width : 'auto'}
             className={
                 errors[inputName]
                     ? "inputError"
