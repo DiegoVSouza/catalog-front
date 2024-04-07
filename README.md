@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="./public/images/logo.svg" alt="logo" width="250">
+  <img src="./public/logo.png" alt="logo" width="250">
 <br>
 <br>
 </h1>
@@ -20,6 +20,8 @@
 <p>
   Utilizamos o back-end produzido em colaboração com meu colega Marcio Fernande
  </p>
+ 
+ <p>link para o back: <a href="https://github.com/farciomernandes/catalog-api">https://github.com/farciomernandes/catalog-api</a></p>
 
 ## 🚀 Tecnologias utilizadas
 - [Typescript](https://www.typescriptlang.org/)
